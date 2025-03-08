@@ -44,6 +44,6 @@ setuptools.setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS :: MacOS X',
     ],
-    install_requires=["requests"],
+    install_requires=[],
     python_requires='>=3.9',
 )

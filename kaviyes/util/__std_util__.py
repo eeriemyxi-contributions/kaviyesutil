@@ -25,9 +25,10 @@ A set of functions to streamline the development process.
 from time import sleep as _sleep
 from os import system as _system
 from datetime import datetime as _datetime
-import requests as _requests
 
 def connected(url='http://www.google.com', timeout=5):
+    import urllib.request
+
     '''Checks if there is an active internet connection.
 
     Parameters
@@ -40,9 +41,9 @@ def connected(url='http://www.google.com', timeout=5):
     - bool: True if connected, False otherwise.
     '''
     try:
-        response = _requests.get(url, timeout=timeout)
+        response = urllib.request.urlopen(url, timeout=timeout)
         return response.status_code == 200
-    except _requests.ConnectionError:
+    except urllib.error.URLError:
         return False
 
 def reverse_string(s):
