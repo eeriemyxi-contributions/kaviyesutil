@@ -22,7 +22,6 @@
 A set of functions to streamline the development process.
 
 '''
-from time import sleep as _sleep
 from os import system as _system
 from datetime import datetime as _datetime
 
@@ -96,7 +95,8 @@ def delay(secs: float):
     ```
     '''
 
-    _sleep(secs)
+    from time import sleep
+    sleep(secs)
 
 def terminal(command: str):
     '''
