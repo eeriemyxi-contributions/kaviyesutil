@@ -23,7 +23,6 @@ A set of functions to streamline the development process.
 
 '''
 from os import system as _system
-from datetime import datetime as _datetime
 
 def connected(url='http://www.google.com', timeout=5):
     import urllib.request
@@ -75,7 +74,8 @@ def timenow(format: str = None, format_24H: bool = True):
     ```
     
     '''
-    now = _datetime.now()
+    from datetime import datetime
+    now = datetime.now()
 
     if format:
         return now.strftime(format)
