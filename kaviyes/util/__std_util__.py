@@ -40,7 +40,7 @@ def connected(url='http://www.google.com', timeout=5):
     '''
     try:
         response = urllib.request.urlopen(url, timeout=timeout)
-        return response.status_code == 200
+        return response.status == 200
     except urllib.error.URLError:
         return False
 
