@@ -22,8 +22,6 @@
 A set of functions to streamline the development process.
 
 '''
-from os import system as _system
-
 def connected(url='http://www.google.com', timeout=5):
     import urllib.request
 
@@ -114,9 +112,10 @@ def terminal(command: str):
     - The command will be executed in the context of the shell used by os.system, which is platform-dependent.
     - On Windows, some commands may have different syntax or requirements compared to Unix-like systems.
     '''
+    from os import system
 
     try:
-        _system(command)
+        system(command)
     except Exception as e:
         print(f"An error occured: {e}")
 
